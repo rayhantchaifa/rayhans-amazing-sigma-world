@@ -1,52 +1,27 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    background: #f4f4f4;
-    transition: background 0.5s ease-in-out;
+    background: linear-gradient(135deg, #1e1e2f, #4a47a3);
+    color: white;
 }
 
 .container {
     margin-top: 50px;
+    padding: 20px;
 }
 
-#title {
-    font-size: 40px;
-    font-weight: bold;
-    animation: glow 2s infinite alternate;
+#clicker {
+    padding: 15px;
+    font-size: 22px;
+    border: none;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
 }
 
-.highlight {
-    color: #007BFF;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px #007BFF; }
-    to { text-shadow: 0 0 20px #0056b3; }
-}
-
-.gallery img {
-    width: 150px;
-    margin: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery img:hover {
-    transform: scale(1.2);
-}
-
-.about-rayhan {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff4500;
-    animation: textGlow 2s infinite alternate;
-}
-
-@keyframes textGlow {
-    from { text-shadow: 0 0 10px #ff4500; }
-    to { text-shadow: 0 0 20px #ff6347; }
-}
-
-.dark-mode {
-    background: #222;
-    color: #fff;
+#clicker:active {
+    transform: scale(0.9);
 }
