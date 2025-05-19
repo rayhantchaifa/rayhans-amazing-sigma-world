@@ -1,29 +1,22 @@
-document.getElementById('magicButton').addEventListener('click', () => {
-    alert("✨ Welcome to the ultimate Sigma world, ruled by the one and only Rayhan! ✨");
-});
-
-document.getElementById('quoteButton').addEventListener('click', () => {
-    const quotes = [
-        "Sigma grindset activated. Keep winning.",
-        "The strongest alone becomes the king.",
-        "In Rayhan’s presence, greatness follows.",
-        "Legends don't chase, they attract."
-    ];
-    alert(quotes[Math.floor(Math.random() * quotes.length)]);
-});
-
-document.getElementById('themeButton').addEventListener('click', () => {
-    document.body.style.background = `hsl(${Math.random() * 360}, 80%, 80%)`;
-});
-
 let score = 0;
+let autoClickers = 0;
+let multiplier = 1;
+
 document.getElementById('clicker').addEventListener('click', () => {
-    score += 10;
+    score += multiplier;
     document.getElementById('score').innerText = score;
+    playClickSound();
+    triggerAnimation();
 });
 
-// Easter Egg: Secret Game
-document.getElementById('hiddenGameButton').addEventListener('click', () => {
-    let secretMessage = "🔥 You've unlocked the secret Sigma mode! You're officially GOATED!";
-    alert(secretMessage);
-});
+function playClickSound() {
+    let audio = new Audio('assets/sounds/click.mp3');
+    audio.volume = 0.5;
+    audio.play();
+}
+
+function triggerAnimation() {
+    let btn = document.getElementById('clicker');
+    btn.style.transform = "scale(1.1)";
+    setTimeout(() => btn.style.transform = "scale(1)", 200);
+}
